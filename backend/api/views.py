@@ -29,7 +29,7 @@ def product_list(request, id=0):
         
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        product = Product.objects.get(id=data['id'])
+        product = Product.objects.get(id=id)
         serializer = ProductSerializer(product, data=data)
         if serializer.is_valid():
             serializer.save()

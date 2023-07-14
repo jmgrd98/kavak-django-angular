@@ -1,6 +1,11 @@
 from django.db import models
 from PIL import Image
 
+class Admin(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.TextField(max_length=100)
+    password = models.TextField(max_length=100)
+
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField(max_length=100)
