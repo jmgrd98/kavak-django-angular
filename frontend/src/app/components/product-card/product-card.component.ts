@@ -7,4 +7,34 @@ import { Component } from '@angular/core';
 })
 export class ProductCardComponent {
 
+  cars = [
+    {
+    name: 'Fiesta',
+    marca: 'Ford',
+    model: 'Mustang',
+    year: 2020,
+    price: 100000,
+  },
+  {
+    name: 'Fiesta',
+    marca: 'Ford',
+    model: 'Mustang',
+    year: 2020,
+    price: 100000,
+  },
+  {
+    name: 'Fiesta',
+    marca: 'Ford',
+    model: 'Mustang',
+    year: 2020,
+    price: 100000,
+  },
+  {
+    name: 'Fiesta',
+    marca: 'Ford',
+    model: 'Mustang',
+    year: 2020,
+    price: 100000,
+  }
+]
 }

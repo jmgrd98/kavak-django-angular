@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'frontend';
+
+  cars = [
+    {
+      name: 'Ford',
+      marca: 'Ford',
+      model: 'Mustang',
+      year: 2020,
+      price: 100000,
+    },
+  ]
 }
