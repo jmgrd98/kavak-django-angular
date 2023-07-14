@@ -7,6 +7,7 @@ from .models import Product
 from .serializers import ProductSerializer
 from rest_framework.decorators import api_view
 from rest_framework.renderers import JSONRenderer
+from django.core.files.storage import default_storage
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
 @csrf_exempt
@@ -43,3 +44,9 @@ def product_list(request, id=0):
             return HttpResponse(status=204)
         except Product.DoesNotExist:
             return HttpResponse(status=404)
+        
+@csrf_exempt
+def save_file(request):
+    file = request.FILES['uploadedFile']
+    file_name = default_storage.save(file.name, file)
+    return JsonResponse(file_name, safe=False, content_type='application/json', status=200)
