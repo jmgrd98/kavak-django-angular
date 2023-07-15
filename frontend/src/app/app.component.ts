@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  cars = [
-    {
-      name: 'Ford',
-      marca: 'Ford',
-      model: 'Mustang',
-      year: 2020,
-      price: 100000,
-    },
-  ]
+  constructor(
+    private service: SharedService
+  ) { }
+
+  ngOnInit(): void {
+    this.showCarList()
+  }
+
+  carList: any = []
+
+  showCarList() {
+    this.service.getCars().subscribe(data => {
+      this.carList = data
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-product-card',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-card.component.sass']
 })
 export class ProductCardComponent {
+
+  constructor(
+    private service: SharedService
+  ) { }
 
   cars = [
     {
@@ -37,4 +42,8 @@ export class ProductCardComponent {
     price: 100000,
   }
 ]
+
+  select() {
+    console.log('Selecionado')
+  }
 }
