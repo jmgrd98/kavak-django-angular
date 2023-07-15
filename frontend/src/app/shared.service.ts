@@ -15,7 +15,7 @@ export class SharedService {
   ) { }
 
   getCars(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl + 'cars/')
+    return this.http.get<any[]>(this.apiUrl + 'products')
   }
 
   getCar(id: number): Observable<any> {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { json } from 'express';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -12,36 +13,20 @@ export class ProductCardComponent {
     private service: SharedService
   ) { }
 
-  cars = [
-    {
-    name: 'Fiesta',
-    marca: 'Ford',
-    model: 'Mustang',
-    year: 2020,
-    price: 100000,
-  },
-  {
-    name: 'Fiesta',
-    marca: 'Ford',
-    model: 'Mustang',
-    year: 2020,
-    price: 100000,
-  },
-  {
-    name: 'Fiesta',
-    marca: 'Ford',
-    model: 'Mustang',
-    year: 2020,
-    price: 100000,
-  },
-  {
-    name: 'Fiesta',
-    marca: 'Ford',
-    model: 'Mustang',
-    year: 2020,
-    price: 100000,
+  ngOnInit(): void {
+    this.showCarList()
   }
-]
+
+  carList: any = []
+
+  showCarList() {
+    this.service.getCars().subscribe(data => {
+      const jsonString = data.toString()
+      const jsonData = JSON.parse(jsonString)
+      this.carList = jsonData
+      console.log(this.carList);
+    })
+  }
 
   select() {
     console.log('Selecionado')

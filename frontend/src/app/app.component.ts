@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from './shared.service';
+import { json } from 'express';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,10 @@ export class AppComponent {
 
   showCarList() {
     this.service.getCars().subscribe(data => {
-      this.carList = data
+      const jsonString = data.toString()
+      const jsonData = JSON.parse(jsonString)
+      this.carList = jsonData
+      console.log(this.carList);
     })
   }
 }

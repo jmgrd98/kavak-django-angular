@@ -4,7 +4,7 @@ from .models import Product, Admin
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'nome', 'marca', 'modelo', 'preco', 'imagem' )
+        fields = ('id', 'nome', 'marca', 'modelo', 'ano', 'preco', 'imagem' )
 
 class AdminSerializer(serializers.ModelSerializer):
     class Meta:

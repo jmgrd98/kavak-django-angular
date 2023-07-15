@@ -11,5 +11,6 @@ class Product(models.Model):
     nome = models.TextField(max_length=100)
     marca = models.TextField(max_length=100)
     modelo = models.TextField(max_length=100)
+    ano = models.IntegerField()
     preco = models.FloatField()
     imagem = models.ImageField(upload_to='uploads/', blank=True, null=True)

@@ -1,13 +1,13 @@
-<div class="card-container" role="button" *ngFor="let car of cars" (click)="select()">
+<div class="card-container" role="button" *ngFor="let car of carList" (click)="select()">
 
   <img src="https://i.imgur.com/0hZqU2t.png" alt="carro" class="card-img">
 
   <div class="description-container">
-    <h2 class="card-title">{{car.name}}</h2>
-    <p class="card-description">{{car.marca}}</p>
-    <p class="card-description">{{car.model}}</p>
-    <span class="card-price">R$ {{car.price}}</span>
-    <p class="card-description">{{car.year}}</p>
+    <h2 class="card-title">{{car.nome}}</h2>
+    <p>{{car.marca}}</p>
+    <p>{{car.modelo}}</p>
+    <span>R$ {{car.preco}}</span>
+    <p>{{car.ano}}</p>
   </div>
 
 </div>
