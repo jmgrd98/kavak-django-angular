@@ -11,4 +11,5 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view()),
     path('api/products', api.views.product_list),
     path('api/products/<int:id>', api.views.product_list),
+    path('api/save_file', api.views.save_file),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

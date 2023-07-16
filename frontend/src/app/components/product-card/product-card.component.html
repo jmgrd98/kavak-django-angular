@@ -1,6 +1,6 @@
 <div class="card-container" role="button" *ngFor="let car of carList" (click)="select()">
 
-  <img src="https://i.imgur.com/0hZqU2t.png" alt="carro" class="card-img">
+  <img src={{car.imagem}} alt="carro" class="card-img">
 
   <div class="description-container">
     <h2 class="card-title">{{car.nome}}</h2>

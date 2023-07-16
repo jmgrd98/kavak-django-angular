@@ -1,5 +1,6 @@
 from django.db import models
 from PIL import Image
+from io import BytesIO
 
 class Admin(models.Model):
     id = models.AutoField(primary_key=True)
@@ -14,3 +15,12 @@ class Product(models.Model):
     ano = models.IntegerField()
     preco = models.FloatField()
     imagem = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-preco']
+
+    def __str__(self):
+        return self.nome
+    
+    

@@ -35,7 +35,7 @@ export class SharedService {
   }
 
   uploadPhoto(photo: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + 'SaveFile/', photo)
+    return this.http.post<any>(this.apiUrl + 'save-file/', photo)
   }
 
 
