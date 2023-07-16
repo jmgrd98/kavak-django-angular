@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class SharedService {
 
   apiUrl = 'http://127.0.0.1:8081/api/'
-  photoUrl = 'http://127.0.0.1:8081/media/'
+  photoUrl = 'http://127.0.0.1:8081/'
 
   constructor(
     private http: HttpClient
@@ -35,8 +35,9 @@ export class SharedService {
   }
 
   uploadPhoto(photo: any): Observable<any> {
-    return this.http.post<any>(this.photoUrl + 'save_file/', photo)
+    return this.http.post<any>(this.apiUrl + 'save_file/', photo)
   }
+
 
 
 }
