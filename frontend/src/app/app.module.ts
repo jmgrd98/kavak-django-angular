@@ -8,11 +8,13 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { SharedService } from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
