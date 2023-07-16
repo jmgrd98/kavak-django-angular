@@ -14,7 +14,7 @@ class Product(models.Model):
     modelo = models.TextField(max_length=100)
     ano = models.IntegerField()
     preco = models.FloatField()
-    imagem = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    imagem = models.ImageField(upload_to='media/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -23,4 +23,8 @@ class Product(models.Model):
     def __str__(self):
         return self.nome
     
-    
+    def get_image(self):
+        if self.imagem:
+            return 'http://localhost:8081/' + self.imagem.name
+        else:
+            return ''
