@@ -1,6 +1,7 @@
 <div class="card-container" role="button" *ngFor="let car of carList" (click)="select()">
 
   <img src={{car.get_image}} alt="carro" class="card-img">
+  <p class="promocao-tag" *ngIf="car.promocao">Promoção</p>
 
   <div class="description-container">
 
@@ -15,6 +16,7 @@
     <p>{{car.ano}} |</p>
     <p>{{car.km}} km |</p>
     <p>{{car.estado}}</p>
+
 
   </div>
     <span class="blue-text">R$ {{car.preco}}</span>
