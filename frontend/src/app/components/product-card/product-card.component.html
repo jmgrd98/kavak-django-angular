@@ -3,11 +3,21 @@
   <img src={{car.get_image}} alt="carro" class="card-img">
 
   <div class="description-container">
-    <h2 class="card-title">{{car.nome}}</h2>
-    <p>{{car.marca}}</p>
-    <p>{{car.modelo}}</p>
-    <span>R$ {{car.preco}}</span>
-    <p>{{car.ano}}</p>
+
+    <div class="row">
+    <span>{{car.marca}}</span>
+    <span class="card-title">{{car.nome}}</span>
+    <span>{{car.modelo}}</span>
+  </div>
+
+  <div class="row">
+
+    <p>{{car.ano}} |</p>
+    <p>{{car.km}} km |</p>
+    <p>{{car.estado}}</p>
+
+  </div>
+    <span class="blue-text">R$ {{car.preco}}</span>
   </div>
 
 </div>

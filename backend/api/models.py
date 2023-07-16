@@ -14,6 +14,9 @@ class Product(models.Model):
     modelo = models.TextField(max_length=100)
     ano = models.IntegerField()
     preco = models.FloatField()
+    km = models.FloatField()
+    estado = models.TextField(max_length=100)
+    promocao = models.BooleanField(default=False)
     imagem = models.ImageField(upload_to='uploads/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
@@ -24,10 +27,10 @@ class Product(models.Model):
         return self.nome
     
     def get_absolute_url(self):
-        return 'http://localhost:8081/products/' + str(self.id)
+        return 'http://localhost:8000/products/' + str(self.id)
     
     def get_image(self):
         if self.imagem:
-            return 'http://localhost:8081' + self.imagem.url
+            return 'http://localhost:8000' + self.imagem.url
         else:
             return ''
