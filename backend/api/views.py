@@ -70,3 +70,5 @@ def search(request):
         serializer = ProductSerializer(products, many=True)
         json_data = JSONRenderer().render(serializer.data).decode('utf-8')
         return JsonResponse(json_data, safe=False, content_type='application/json', status=200)
+    else:
+        return HttpResponse({"products": []})

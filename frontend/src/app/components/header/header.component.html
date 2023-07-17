@@ -18,18 +18,29 @@
                 </li>
                 <li>
                   <a routerLink="/" routerLinkActive="active">Sobre nós</a>
+                  <span class="material-symbols-outlined">
+                    keyboard_arrow_down
+                    </span>
                 </li>
                 <li>
-                  <a routerLink="/" routerLinkActive="active">Cadastre-se</a>
+                  <span class="material-symbols-outlined">
+                    account_circle
+                    </span>
+                  <a routerLink="/register" routerLinkActive="active">Cadastre-se</a>
                 </li>
               </ul>
             </nav>
         </div>
 
         <div class="search-container">
-        <input class="search" type="text" placeholder="Buscar por nome, marca, modelo ou ano">
+          <form method="get" action="/search">
+            <input class="search" type="text" placeholder="Buscar por nome, marca, modelo ou ano" name="query">
+            <button type="submit" class="material-symbols-outlined">
+              search
 
-      </div>
-
+              </button>
+          </form>
+        </div>
     </div>
+
 </header>

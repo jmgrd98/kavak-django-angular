@@ -22,6 +22,13 @@ header
     text-decoration: none
     gap: 20px
 
+    li
+      display: flex
+      align-items: center
+      gap: 5px
+      cursor: pointer
+      color: gray
+
     a
       color: gray
 
@@ -29,13 +36,23 @@ header
     background-color: #3374DB
     width: 100vw
     padding: 10px
-    text-align: center
 
     input
       width: 80%
       padding: 10px
-      border-radius: 5px
+      border-radius: 5px 0 0 5px
       border: none
       outline: none
       font-size: 16px
       box-sizing: border-box
+
+    button
+      background-color: #3374DB
+      color: white
+      text-align: center
+      padding: 10px
+      border-radius: 0 5px 5px 0
+      font-size: 16px
+      cursor: pointer
+      border: 2px solid white
+      font-weight: bold
