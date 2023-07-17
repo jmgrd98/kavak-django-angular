@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.sass']
+
+
 })
 export class ProductPageComponent {
 
@@ -21,15 +23,14 @@ export class ProductPageComponent {
     });
   }
 
-  car = {}
+  car: any = {}
 
   getProduct(id: number) {
-    this.service.getCar(id).subscribe(data => {
-      const jsonString = data.toString()
-      const jsonData = JSON.parse(jsonString)
+    this.service.getCar(id).subscribe((data: any) => {
+      const jsonData = JSON.parse(data);
       this.car = jsonData;
       console.log(this.car);
-    })
+    });
   }
 
 }
