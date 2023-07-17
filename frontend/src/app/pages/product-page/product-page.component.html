@@ -4,12 +4,21 @@
   <img [src]="car.get_image" alt="Car image" class="car-img">
 
   <section class="car-info">
-    <h2>{{car.nome}}</h2>
-    <span>{{car.marca}}</span>
-    <span>{{car.modelo}}</span>
 
-    <span class="blue-text">R$ {{car.preco}}</span>
+    <div class="row">
+    <h2 class="bold">{{car.nome}}</h2>
+    <h2 class="bold">{{car.marca}}</h2>
+    <h2 class="bold">{{car.modelo}}</h2>
+  </div>
 
-    <button>Tenho interesse</button>
+    <div class="row">
+      <p>{{car.ano}} |</p>
+      <p>{{car.km}} km |</p>
+      <p>{{car.estado}}</p>
+    </div>
+
+    <p class="grey-text">Preço: </p><span class="blue-text bold">R$ {{car.preco}}</span>
+
+    <button>Tenho interesse!</button>
   </section>
 </body>
