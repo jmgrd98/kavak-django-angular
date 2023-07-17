@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  showFilter = false;
+
+  constructor() { }
+
+  toggleFilter() {
+    this.showFilter = !this.showFilter;
+  }
+
 }

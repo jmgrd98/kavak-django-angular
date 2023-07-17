@@ -2,8 +2,21 @@
 
 <body>
 
-  <app-sidebar></app-sidebar>
+  <div class="filters-section">
+
+    <button (click)="toggleFilter()">
+      <span class="material-symbols-outlined">
+        filter_list
+        </span>
+      <p>Mostrar filtros</p>
+    </button>
+  </div>
+
+  <div class="display-section">
+  <app-sidebar *ngIf="showFilter"></app-sidebar>
 
   <app-product-card></app-product-card>
+
+  </div>
 
 </body>
