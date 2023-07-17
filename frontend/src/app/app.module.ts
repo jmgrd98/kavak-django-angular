@@ -9,12 +9,16 @@ import { SharedService } from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductCardComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

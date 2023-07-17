@@ -29,8 +29,4 @@ export class AppComponent {
       console.log(this.carList);
     })
   }
-
-  viewDetails(id: number) {
-    this.router.navigate(['/product-page', id]);
-  }
 }
