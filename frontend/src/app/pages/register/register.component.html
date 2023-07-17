@@ -1,0 +1,14 @@
+<body>
+
+  <img src="../../../assets/kavak-logo.png" alt="Kavak Logo" class="logo">
+
+  <form>
+    <input type="text" placeholder="E-mail" [(ngModel)]="email" required>
+    <input type="password" placeholder="Senha" [(ngModel)]="password" required>
+    <input type="password" placeholder="Confirme a senha" [(ngModel)]="confirmPassword" required>
+
+    <button type="submit" (click)="register()">Entrar</button>
+  </form>
+
+
+</body>

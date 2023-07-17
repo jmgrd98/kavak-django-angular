@@ -1,6 +1,7 @@
 <app-header></app-header>
 
 <body>
+  <p class="promocao-tag" *ngIf="car.promocao">Promoção</p>
   <img [src]="car.get_image" alt="Car image" class="car-img">
 
   <section class="car-info">

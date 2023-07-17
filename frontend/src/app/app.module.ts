@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -11,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductCardComponent,
     ProductPageComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

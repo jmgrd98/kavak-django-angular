@@ -9,6 +9,7 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from django.core.files.storage import default_storage
+from django.db.models import Q
         
 @csrf_exempt
 def save_file(request):
@@ -60,3 +61,12 @@ class ProductDetail(APIView):
         product.delete()
         return HttpResponse(status=204)
     
+@api_view(['POST'])
+def search(request):
+    query = request.data.get['query', '']
+
+    if query:
+        products = Product.objects.filter(Q(nome__icontains=query) | Q(marca__icontains=query) | Q(modelo__icontains=query) | Q(ano__icontains=query))
+        serializer = ProductSerializer(products, many=True)
+        json_data = JSONRenderer().render(serializer.data).decode('utf-8')
+        return JsonResponse(json_data, safe=False, content_type='application/json', status=200)
