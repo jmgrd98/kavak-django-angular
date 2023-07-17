@@ -19,7 +19,7 @@ export class SharedService {
   }
 
   getCar(id: number): Observable<any> {
-    return this.http.get<any>(this.apiUrl + 'products/' + id + '/')
+    return this.http.get<any>(this.apiUrl + 'products/' + id)
   }
 
   addCar(car: any): Observable<any> {
@@ -31,7 +31,7 @@ export class SharedService {
   }
 
   deleteCar(id: number): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + 'products/' + id + '/')
+    return this.http.delete<any>(this.apiUrl + 'products/' + id)
   }
 
   uploadPhoto(photo: any): Observable<any> {

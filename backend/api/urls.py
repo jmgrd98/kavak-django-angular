@@ -6,6 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('products', ProductList.as_view()),
-    path('products/<int:id>', views.product_list),
+    path('products/<int:id>', views.ProductDetail.as_view()),
     path('save_file', views.save_file),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

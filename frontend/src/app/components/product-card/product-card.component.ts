@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { json } from 'express';
 import { SharedService } from 'src/app/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -10,7 +11,8 @@ import { SharedService } from 'src/app/shared.service';
 export class ProductCardComponent {
 
   constructor(
-    private service: SharedService
+    private service: SharedService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +30,8 @@ export class ProductCardComponent {
     })
   }
 
-  select() {
-    console.log('Selecionado')
+  viewDetails(id: number) {
+    this.router.navigate(['/products', id]);
   }
+
 }

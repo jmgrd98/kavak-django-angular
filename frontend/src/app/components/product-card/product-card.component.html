@@ -1,4 +1,4 @@
-<div class="card-container" role="button" *ngFor="let car of carList" (click)="select()">
+<div class="card-container" role="button" *ngFor="let car of carList" (click)="viewDetails(car.id)">
 
   <img src={{car.get_image}} alt="carro" class="card-img">
   <p class="promocao-tag" *ngIf="car.promocao">Promoção</p>

@@ -1,13 +1,15 @@
 <app-header></app-header>
 
 <body>
-  <img src={{car.get_image}} alt="Car image" class="car-img">
+  <img [src]='car.get_image' alt="Car image" class="car-img">
 
   <section class="car-info">
-    <h2>{{car.nome}}</h2>
-    <span>{{car.marca}}</span>
-    <span>{{car.modelo}}</span>
+    <h2>Car</h2>
+    <span>Car</span>
+    <span>Car</span>
 
-    <span class="blue-text">{{car.preco}}</span>
+    <span class="blue-text">R$ price</span>
+
+    <button>Tenho interesse</button>
   </section>
 </body>

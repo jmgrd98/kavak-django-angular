@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from './shared.service';
 import { json } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { json } from 'express';
 export class AppComponent {
 
   constructor(
-    private service: SharedService
+    private service: SharedService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,5 +28,9 @@ export class AppComponent {
       this.carList = jsonData
       console.log(this.carList);
     })
+  }
+
+  viewDetails(id: number) {
+    this.router.navigate(['/product-page', id]);
   }
 }

@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
-    path('api/products', api.views.product_list),
-    path('api/products/<int:id>', api.views.product_list),
+    path('api/products', api.views.ProductList.as_view()),
+    path('api/products/<int:id>', api.views.ProductDetail.as_view()),
     path('api/save_file', api.views.save_file),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
